@@ -187,3 +187,4 @@ FakesAssemblies/
 .project
 .settings*
 .metadata/
+.recommenders/
