@@ -19,10 +19,10 @@ public class StringExamples {
         
         two.append(" and Goodbye");
         
-      System.out.println(one == two);
-      System.out.println(one.equals(two));
-      System.out.println(one);
-      System.out.println(two);
+        System.out.println(one == two);
+        System.out.println(one.equals(two));
+        System.out.println(one);
+        System.out.println(two);
       
     }
 
