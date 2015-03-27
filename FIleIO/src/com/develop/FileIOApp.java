@@ -8,17 +8,35 @@ public class FileIOApp {
 
 	public static void main(String[] args) throws Exception {
 		
+		char[] ca = new char[] {'a', 'b', 'c', 'd', 'a'};
 		
-		try (DataInputStream is = new DataInputStream(new FileInputStream("test.txt")))
-		{
-			out.println(is.readDouble());
-			out.println(is.readInt());
-			out.println(is.readUTF());
-			
-		} catch (IOException e) {
-			
-		}
+		CharArrayReader cr = new CharArrayReader(ca);
 		
+		Reader r = new FilterReader(cr) {
+			@Override
+			public int read() throws IOException {
+				int ch = in.read();
+				while (((char)ch) == 'a') {
+					ch = in.read();
+				}
+				return ch;
+			}
+		};
+		
+		
+		
+		
+//		
+//		try (DataInputStream is = new DataInputStream(new FileInputStream("test.txt")))
+//		{
+//			out.println(is.readDouble());
+//			out.println(is.readInt());
+//			out.println(is.readUTF());
+//			
+//		} catch (IOException e) {
+//			
+//		}
+//		
 //		FileOutputStream raw = new FileOutputStream("test.txt");
 //		
 //		DataOutputStream os = new DataOutputStream(raw);
